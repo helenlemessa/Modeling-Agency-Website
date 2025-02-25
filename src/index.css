@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: #0a0a0a; /* Deep black */
+  
+}
+html {
+  scroll-behavior: smooth;
+}
+.masonry-grid {
+  column-count: 1; /* Default to 1 column */
+  column-gap: 1.5rem; /* Match Tailwind's gap-6 */
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    column-count: 2; /* 2 columns on small screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3; /* 3 columns on large screens */
+  }
+}
+
+.masonry-item {
+  break-inside: avoid; /* Prevent items from breaking across columns */
+  margin-bottom: 1.5rem; /* Match Tailwind's gap-6 */
+}
+/* Hide scrollbar in webkit browsers (Chrome, Safari, Edge) */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Internet Explorer and Edge */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+}
